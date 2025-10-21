@@ -9,6 +9,17 @@ json_agg() // untuk membuat array []
 ```
 json_build_object('key', value) // untuk membuat object { key: value }
 ```
+```
+left join users on users.maduid= madu.id
+group by madu.nama, madu.jenis,madu.harga, madu.stok
+```
+```
+select madu.nama, madu.jenis, madu.harga, madu.stok,
+coalesce((),'[]')
+from madu
+left join users on users.maduid= madu.id
+group by madu.nama, madu.jenis,madu.harga, madu.stok
+```
 
 ### nested level 1
 ```
